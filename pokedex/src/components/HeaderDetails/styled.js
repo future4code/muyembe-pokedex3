@@ -5,10 +5,6 @@ export const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
 
-  customizeToolbar: {
-    minHeight: 36,
-  },
-
   logo: {
     height: "120px",
     "&:hover": {

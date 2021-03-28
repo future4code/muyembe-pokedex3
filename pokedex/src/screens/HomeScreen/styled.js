@@ -1,6 +1,15 @@
-import styled from 'styled-components'
+import { makeStyles } from "@material-ui/core/styles";
 
-export const Title = styled.h2`
-    text-align: center;
-    padding-top: 1em;
-`
+export const useStyles = makeStyles((theme) => ({
+  homeGridContainer: {
+    paddingTop: "20px",
+    paddingLeft: "60px",
+    paddingRight: "60px",
+  },
+
+  homeScreen: {
+    textAlign: "center",
+    marginTop: "40px",
+    minHeight: "100vh",
+  },
+}));

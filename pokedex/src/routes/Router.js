@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import PokedexScreen from "../screens/PokedexScreen/PokedexScreen";
-import PokemonDetailScreen from "../screens/PokemonDetailScreen/PokemonDetailScrenn";
-
+import PokemonDetailScreen from "../screens/PokemonDetailScreen/PokemonDetailScreen";
+import ErrorPage from "../screens/ErrorPage/ErrorPage"
 const Router = () => {
   return (
     <BrowserRouter>
@@ -18,7 +18,7 @@ const Router = () => {
           <PokemonDetailScreen />
         </Route>
         <Route>
-            <div> Página não encontrada </div>
+            <ErrorPage/>
         </Route>
       </Switch>
     </BrowserRouter>

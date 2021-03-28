@@ -1,57 +1,55 @@
-import React, {useContext} from 'react'
-import GlobalStateContext from '../../global/GlobalStateContext'
-import {Title } from './styled'
-import PokemonCard from "../../components/PokemonCard/PokemonCard"
-import {Grid, Card, CircularProgress} from '@material-ui/core'
-import {makeStyles} from "@material-ui/core/styles"
+import React, { useContext } from "react";
+import GlobalStateContext from "../../global/GlobalStateContext";
+import PokemonCard from "../../components/PokemonCard/PokemonCard";
+import { Grid, Typography, CircularProgress } from "@material-ui/core";
+import Header from "../../components/Header/Header";
+import { goToPokedexScreen } from "../../routes/Coordinator";
+import { useStyles } from "./styled";
+import Footer from "../../components/Footer/Footer";
+import Box from "@material-ui/core/Box";
 
-const useStyles = makeStyles({
-  homeContainer: {
-    paddingTop: '20px',
-    paddingLeft: '50px',
-    paddingRight: '50px',
-  }
-})
 const HomeScreen = () => {
+  const classes = useStyles();
 
-  const classes = useStyles()
-
-  const { states, setters } = useContext(GlobalStateContext)
+  const { states, setters } = useContext(GlobalStateContext);
 
   const addPokeToPokedex = (newItem) => {
-    // acha o index do item que é para adicionar
-    const index = states.pokemonList.findIndex((i) => i.name === newItem.name)
-    
-    // copia a pokedex com o que tá
-    let newPokedex = [...states.pokedex]
-    // adiciona o item na pokedex
-    newPokedex.push({ ...newItem })
-    // seta a pokedex com o novo item
-    setters.setPokedex(newPokedex)
+    const index = states.pokemonList.findIndex((i) => i.name === newItem.name);
 
-    console.log(newPokedex)
+    let newPokedex = [...states.pokedex];
+    newPokedex.push({ ...newItem });
+    setters.setPokedex(newPokedex);
 
-    // copia a pokemonList com o que tá
-    let newPokeList = [...states.pokemonList]
-    // apaga o item com base no seu index
-    newPokeList.splice(index, 1)
-    // seta a pokemonList sem esse item
-    setters.setPokemonList(newPokeList)
-    
-    alert(`${newItem.name} foi adicionado na pokedex!`)
-  }
+    let newPokeList = [...states.pokemonList];
+    newPokeList.splice(index, 1);
+    setters.setPokemonList(newPokeList);
+
+    alert(`${newItem.name} foi adicionado na pokedex!`);
+  };
 
   return (
     <div>
-      <Title>Lista de Pokemons</Title>
-      <Grid container spacing={1} className={classes.homeContainer}>
-        {states.pokemonList && states.pokemonList.map((pokemon) => {
-          return <PokemonCard addPokeToPokedex={() => addPokeToPokedex(pokemon)} url={pokemon.url} />
-        })}
-      </Grid>
+      <Header textButton={"Pokedex"} buttonFunction={goToPokedexScreen} />
+      <div className={classes.homeScreen}>
+        <Box mt={20}>
+          <Typography variant="h3"> List of Pokemons</Typography>
+        </Box>
+        <Grid container spacing={1} className={classes.homeGridContainer}>
+          {states.pokemonList &&
+            states.pokemonList.map((pokemon) => {
+              return (
+                <PokemonCard
+                  buttonCardFunction={() => addPokeToPokedex(pokemon)}
+                  url={pokemon.url}
+                  buttonName={"Add Pokedex"}
+                />
+              );
+            })}
+        </Grid>
+      </div>
+      <Footer />
     </div>
-    
   );
-}
+};
 
 export default HomeScreen;
