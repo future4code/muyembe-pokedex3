@@ -1,9 +1,8 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Monalisa Kairine Pereira
+
 
 Link do Surge: www.link.com.br
 
