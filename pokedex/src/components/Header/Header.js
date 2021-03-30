@@ -37,7 +37,7 @@ function Header(props) {
           onClick={() => goToHomeScreen(history)}
         />
         <div className={classes.grow} />
-        <Button className={classes.button}></Button>
+        <Button disabled={true} className={classes.button}></Button>
       </Toolbar>
     </AppBar>
   );
