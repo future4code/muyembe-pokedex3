@@ -33,7 +33,7 @@ function PokedexScreen() {
       <PokemonCard
         buttonCardFunction={() => removePokeFromPokedex(item)}
         url={item.url}
-        buttonName={" Deletar Pokemon"}
+        buttonName={"Remove Pokemon"}
       />
     );
   });

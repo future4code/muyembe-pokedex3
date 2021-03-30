@@ -24,7 +24,7 @@ const HomeScreen = () => {
     newPokeList.splice(index, 1);
     setters.setPokemonList(newPokeList);
 
-    alert(`${newItem.name} foi adicionado na pokedex!`);
+    alert(`${newItem.name} was added to your pokedex!`);
   };
 
   return (

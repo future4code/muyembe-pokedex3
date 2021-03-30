@@ -28,7 +28,7 @@ function HeaderDetails(props) {
     if (indexPokedex === -1) {
       newPokedex.push({ ...item });
       newPokeList.splice(indexList, 1);
-      alert(`${item.name} was added to a pokédex!`);
+      alert(`${item.name} was added to your pokedex!`);
     } else {
       newPokedex.splice(indexPokedex, 1);
       newPokeList.push({ ...item });

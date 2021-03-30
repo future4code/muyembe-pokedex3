@@ -6,8 +6,6 @@ import { useHistory } from "react-router-dom";
 import logoPokemon from "../../assets/Pokemon_logo.svg";
 import { goToHomeScreen } from "../../routes/Coordinator";
 import { useStyles } from "./styled";
-import pokeball from "../../assets/pokeball.svg";
-import Avatar from "@material-ui/core/Avatar";
 
 function Header(props) {
 
@@ -24,7 +22,7 @@ function Header(props) {
           onClick={() => {
             props.buttonFunction(history);
           }}
-          startIcon={<Avatar src={pokeball} />}
+          
         >
           {" "}
           {props.textButton}{" "}
