@@ -10,6 +10,7 @@ import pokeball from "../../assets/pokeball.svg";
 import Avatar from "@material-ui/core/Avatar";
 
 function Header(props) {
+
   const classes = useStyles();
   const history = useHistory();
 
@@ -36,6 +37,7 @@ function Header(props) {
           onClick={() => goToHomeScreen(history)}
         />
         <div className={classes.grow} />
+        <Button className={classes.button}></Button>
       </Toolbar>
     </AppBar>
   );

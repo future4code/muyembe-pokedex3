@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import GlobalStateContext from "../../global/GlobalStateContext";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
-import { Grid, Typography, CircularProgress } from "@material-ui/core";
+import { Grid, Typography} from "@material-ui/core";
 import Header from "../../components/Header/Header";
 import { goToPokedexScreen } from "../../routes/Coordinator";
 import { useStyles } from "./styled";

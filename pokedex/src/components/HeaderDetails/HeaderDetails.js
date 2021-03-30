@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import { useStyles } from "./styled";
 
 function HeaderDetails(props) {
+
   const { states, setters } = useContext(GlobalStateContext);
   const history = useHistory();
   const classes = useStyles();
@@ -27,11 +28,11 @@ function HeaderDetails(props) {
     if (indexPokedex === -1) {
       newPokedex.push({ ...item });
       newPokeList.splice(indexList, 1);
-      alert(`${item.name} foi adicionado na pokedex!`);
+      alert(`${item.name} was added to a pokédex!`);
     } else {
       newPokedex.splice(indexPokedex, 1);
       newPokeList.push({ ...item });
-      alert(`${item.name} foi removido da pokedex!`);
+      alert(`${item.name} was removed from your pokedex!`);
     }
 
     setters.setPokedex(newPokedex);
@@ -44,6 +45,7 @@ function HeaderDetails(props) {
         <Button
           variant="outlined"
           color="inherit"
+          className={classes.button}
           onClick={() => history.goBack()}
         >
           {" "}
@@ -60,6 +62,7 @@ function HeaderDetails(props) {
         <Button
           variant="outlined"
           color="inherit"
+          className={classes.button}
           onClick={() => whatToDo(props.pokemon)}
         >
           {indexOfPokedex === -1 ? "Add to Pokedex" : "remove from pokedex"}{" "}

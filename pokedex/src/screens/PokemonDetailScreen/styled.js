@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 export const useStyles = makeStyles((theme) => ({
   totalPage: {
     display: "grid",
-    gridTemplateRows: "100px auto 80px",
+    gridTemplateRows: "100px 1fr 80px",
     alignItens: "center",
     minHeight: "100vh",
   },

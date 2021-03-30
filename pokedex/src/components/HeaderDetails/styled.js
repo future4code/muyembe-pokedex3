@@ -15,4 +15,8 @@ export const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
+
+  button: {
+    width: "160px",
+  },
 }));

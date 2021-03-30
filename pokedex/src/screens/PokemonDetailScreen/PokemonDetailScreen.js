@@ -16,7 +16,6 @@ function PokemonDetailScreen() {
   const object = { name: params.name, url: `${base_Url}/${params.id}` };
   const pokeDetails = useRequestData(`${base_Url}/${params.id}`, undefined);
 
-
   return (
     <div className={classes.totalPage}>
       <HeaderDetails pokemon={object} />
@@ -64,7 +63,7 @@ function PokemonDetailScreen() {
                 </div>
                 <Typography variant="h5">Main Attacks</Typography>
                 {pokeDetails.moves.map((item, index) => {
-                  return index < 5 && <Typography variant = 'h6'>{item.move.name}</Typography>;
+                  return index < 6 && <Typography variant = 'h6'>{item.move.name}</Typography>;
                 })}
               </div>
             </Grid>
